@@ -1,7 +1,7 @@
 
 ion-toolbar
 {
-  --background : #333A44;
+  --background : #2B323F;
 }
 ion-title
 {
@@ -10,5 +10,11 @@ ion-title
 
 ion-fab-button
 {
-  --background : #dba78b ;
+  --background : rgb(184, 161, 144); ;
+}
+
+.ion-card 
+{
+ // background-color: red;
+  --background : #D5BBA9;
 }
