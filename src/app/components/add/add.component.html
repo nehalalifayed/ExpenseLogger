@@ -1,5 +1,4 @@
 <ion-header [translucent]="true">
-
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -9,7 +8,30 @@
     </ion-toolbar>
   </ion-header>
 
-<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-label> Amount: </ion-label>
+      <ion-input type="number" #amount></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <ion-card >
+    <ion-item>
+      <ion-label> Description: </ion-label>
+      <ion-input type="text" #desc></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+   <ion-item>
+    <ion-label>Expense Type</ion-label>
+    <ion-select placeholder="Select One" #Type>
+      <ion-select-option *ngFor="let type of ExpenseTypes" [value] = "type">{{type}}</ion-select-option>
+    </ion-select>
+
+   </ion-item>
+  </ion-card>
+
   <ion-button color="danger" class = "Dangerbutton" (click)= "dismiss()">Dismiss</ion-button>
-  <ion-button color="success" class = "ScuessButton">Save</ion-button>
+  <ion-button color="success" class = "ScuessButton" (click)= "createExpense(amount , desc , Type)">Save</ion-button>
 </ion-content>
