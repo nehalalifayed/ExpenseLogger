@@ -19,14 +19,38 @@
 
   <ion-card >
     <ion-item  class="ion-card">
-      <ion-label  class="ion-card" > The Total Amount Spent Is:   </ion-label>
+      <ion-label  class="ion-card" > The Total Amount Spent Is:  {{TotalSpending}} </ion-label>
     </ion-item>
   </ion-card>
 
   <ion-item>
     <ion-label> Change date </ion-label>
-    <ion-datetime displayFormat="MMMM DD YYYY" placeholder="Select Date"></ion-datetime>
+    <ion-datetime displayFormat="MMMM DD YYYY" placeholder="Select Date" [(ngModel)]="selectedDate"></ion-datetime>
   </ion-item>
+ <!-- *ngFor="let expense of expenses"
+  {{expense.date}}
+  {{expense.type}}
+-->
+  <ion-card *ngFor="let expense of expenses">
+      <ion-card-header class="card">
+        <ion-card-subtitle> {{expense.date}} </ion-card-subtitle>
+      </ion-card-header>
+   
+      <ion-item>
+        <ion-icon name="cash-outline" slot="start"></ion-icon>
+        <ion-label>{{expense.amount}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="arrow-forward-circle-outline" slot="start"></ion-icon>
+        <ion-label>{{expense.type}} </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="clipboard-outline"slot="start"></ion-icon>
+      <ion-label>{{expense.description}} </ion-label>
+  </ion-item>
+  </ion-card>
 
 
 </ion-content>
