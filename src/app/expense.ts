@@ -3,14 +3,14 @@ export class Expense {
     amount : number;
     type : string;
     description : string;
-    date : Date;
+    date : string;
 
-    constructor(amount : number , type : string ,description : string  , date : Date)
+    constructor(amount : number , type : string ,description : string  , date : string)
     {
         this.amount = amount;
         this.type = type;
         this.description = description;
         this.date = date;
-        this.ID = Math.floor(Math.random() * 1000);;
+        this.ID = Math.floor(Math.random() * 1000);
     }
 }
